@@ -44,9 +44,9 @@ MathJax.Hub.Config({
   considering the topic was heavily discussed in the election, it seems appropriate to make this assumption.</p>
 
   <p>The graph below indicates the 
-    proportion of votes for each candidate in 5 political party. There were more than 5 political parties competing 
-    in the election, but these were the five major parties. Gaps in the graph arr intentional and reflect votes 
-    that were for political parties outside of the five observed. One can clearly see that the two major parties were
+    proportion of votes for each candidate in 5 political parties<dt-fn> Of course, there were more than 5 political parties competing 
+        in the election, but these were the five major parties. Gaps in the graph are intentional and reflect votes 
+        that were for political parties outside of the five observed.</dt-fn>.  One can clearly see that the two major parties were
     Democrats and Republicans. Therefore, political leaning will be gauged on how strong a state leans toward the
     Democratic or Republic party.</p>
   <img class=l-body src=img/politic.png >
@@ -54,12 +54,13 @@ MathJax.Hub.Config({
     preference by state, with blues 
     representing support for the Democratic party and the reds representing support for the 
     Republican party. However, unlike the visualization above, this graph more clearly displays the strength of 
-    political leaning, as expressed through color opacity, with darker colors having strong support and lighter 
+    political leaning<dt-fn>Characterizing strength of political preference was calculated using z-scores. 
+        Z-scores are values that represent how close data is to the mean, with low z scores indicating values 
+        that are close to the mean and high z scores indicating values farther away from the mean.
+        Political leaning was strong when the absolute value of the z-score was above 1.</dt-fn>, 
+        as expressed through color opacity, with darker colors having strong support and lighter 
     colors having weaker support. 
-    Characterizing strength of political preference was calculated using z-scores. 
-    Z-scores are values that represent how close data is to the mean, with low z scores indicating values 
-    that are close to the mean and high z scores indicating values farther away from the mean.
-    Political leaning was strong when the absolute value of the z-score was above 1.</p>
+    </p>
   <img class=l-body src=img/map.png >
   <p>An interesting realization that emerged as a result of these visualizations is understanding state 
       preference can be drastically different than city preference. Initially, I wanted to simply look 
@@ -69,25 +70,25 @@ MathJax.Hub.Config({
       when looking into state trends, I tried choosing large cities (which also corresponds to more 
       interesting twitter trends and more thorough weather information) that had varied political preferences.</p>
       <img class=l-body src=img/heatmap.png >
-  <p>The visualization above is a heatmap comparing how frquently a climate change related key word <dt-fn>Includes: climate change, global warming, warming,
+  <p>The visualization above is a heatmap comparing how frquently a climate change related key words <dt-fn>climate change, global warming, warming,
       climate, carbon dioxide, co2, pollution, air quality, climate crisis, #climatedenial, #climateemergency,
       climate denial, #climateaction, climate science, drought, and water level</dt-fn> is used in
-      each state. The annotated values are 'normalized tweet count by hour' <dt-fn>The value that corresponds 
+      each state. The annotated values<dt-fn>All values in 'normalized tweet count by hour' were rounded by 2. Because of this, some of the 0 values
+          are not neccessarily 0, but are very small. <br> <br> Also, the term 'pollutionair quality' was a typo; therefore, it is expected that
+          all values are zero. </dt-fn> are 'normalized tweet count by hour'. <dt-fn>The value that corresponds 
           to how many tweets containing the keyword are created, on average, for any given hour. It is calculated by dividing all climate change related tweets by the number of hours observed</dt-fn></p>
       <p>California generates the most climate change related tweets, with the most common word used being climate. 
       Climate is also used frquently in New York. In fact, after California, New York and Texas tweet about climate change
-      the second and third most. The term 'pollutionair quality' was a typo; therefore, it is expected that
-      all values are zero. all values in 'normalized tweet count by hour' were rounded by 2. Because of this, some of the 0 values
-      are not neccessarily 0, but are very small.</p>
+      the second and third most. </p>
       <p>I was very surprised that there were so few results for hashtags terms <dt-fn> #climatedenial, #climateemergency </dt-fn>. When looking
       at climate change tweets online, these terms came up alot so it is surprising that almost all states have a value
       of 0 (or close to) for these terms.</p>
   
   <h2>Alaska</h2>
-  <p>Alaska has a strong Republican leaning, so I would assume that climate change related tweets occur more
+  <p>Alaska has a strong Republican leaning; under the hypothesis, it is expcted that climate change related tweets occur more
     in cold weather.</p>
     <p>Alaska was chosen for two major reasons. Firstly, it is has a strong Republican leaning, and secondly it's climate is one
-        of the most impacted by climate change. Therefore, I expected it to have a very strong response to this issue. This did not end up 
+        of the most impacted by climate change. Therefore, I expected it to have a very strong response to this issue. Ultimately, this did not end up 
         being the case.</p>
     <img class=l-body src=img/AK.png >
     <p>
@@ -96,44 +97,39 @@ MathJax.Hub.Config({
       </p>
       <p>
           For December 28, 2017, the spike in tweet count is likely attributed to President Trump's 
-          Twitter comment<dt-fn><img  width=300px src=img/trump.png ></dt-fn> regarding climate change. </p>
-          <p>
-          We will see that this tweet ignites a strong response in places beyond Alaska later on.
+          Twitter comment<dt-fn><img  width=500px src=img/trump.png ></dt-fn> regarding climate change. We will see that this tweet ignites a strong response in places beyond Alaska.
         </p>
     <img class=l-body src=img/AK_Overall_dailymax.png >
-    <img class=l-body src=img/AK_Overall_dailymin.png >
-    <p>The scatterplots above show the relationship between tweet count and temperature extremes. 
+    <p>The scatterplot above show the relationship between tweet count and temperature extremes. 
       The visualizations are seperated by daily temoperature minimum and daily temperature maximum,
-      though there is no a significant difference between the two. Also, lowering opacity of each data point
-    enabled density to be better oberserved.</p>
-    <img class=l-body src=img/AK_Spring_dailymax.png >
-    <img class=l-body src=img/AK_Summer_dailymax.png >
-    <img class=l-body src=img/AK_Fall_dailymax.png >
-    <img class=l-body src=img/AK_Winter_dailymax.png >
-      <p>There seems to be a weak positive correlation between 
-        temperature extremes and twitter count. Furthermore, there seems to be no seasonal variations.
-        In general, climate change related tweets seem to occur slightly more during the fall season; if the hypothesis were true,
-        we would probably have expected it to occur more during the winter.
-      </p>
+      though there is no a significant difference between the two. Also, the seasonal differences<dt-fn>
+        <img width=300px src=img/AK_Spring_dailymax.png >
+        <img width=300px src=img/AK_Summer_dailymax.png >
+        <img width=300px src=img/AK_Fall_dailymax.png >
+        <img width=300px src=img/AK_Winter_dailymax.png ></dt-fn> do not seem significant. If the hypothesis were true,
+        we would probably have expected it to occur more during the winter.</p>
+  
       <img class=l-body src=img/AK_wordfreq.png >
       <p>
       The bar graph shows which key words people are using the most in their tweets. In this case, climate seems to be the most used word. </p>
-      <p>In all there is not a clear relationship between weather trends and twitter counts. If anything, twitter counts seem to be more related
+      <p>In all, there is no clear relationship between weather trends and twitter counts. If anything, twitter counts seem to be more related
       to national events rather than the weather.</p>
       <h2>Juneau, Alaska</h2>
       <p>Though Alaska is strongly Republican, Juneau has a history of being Democratic leaning. 
           In the last election, the Republican candidate recieved a majority vote of 52.8 as compared 
           to the Democratic votes of 35.1%. If the hypothesis were true, we would expect to see more tweets in warmer weather.</p>
           <p>Recall that the spikes in December are from the extreme snowfall and President Trump's tweet. The small spike in Septmber 20, 2019 was likely caused by a 
-            global climate chnage protest that took place 3 days before the UN Summit. Besides these 3 events, I cannot explain the other spikes in twewt count.
+            global climate change protest that took place 3 days before the UN Summit. Besides these 3 events, I cannot explain the other spikes in tweet count.
           </p>
           <img class=l-body src=img/Juneau.png >
           <img class=l-body src=img/Juneau_Overall_dailymax.png >
-          <img class=l-body src=img/Juneau_Spring_dailymax.png >
-          <img class=l-body src=img/Juneau_Summer_dailymax.png >
-          <img class=l-body src=img/Juneau_Fall_dailymax.png >
-          <img class=l-body src=img/Juneau_Winter_dailymax.png >
-          <p>Based on scatterplot information, the relationship between tweet count and seasonality is very weak. 
+          
+          <p>Based on scatterplot information, the relationship between tweet count and seasonality<dt-fn>
+              <img width=300px src=img/Juneau_Spring_dailymax.png >
+              <img width=300px src=img/Juneau_Summer_dailymax.png >
+              <img width=300px src=img/Juneau_Fall_dailymax.png >
+              <img width=300px src=img/Juneau_Winter_dailymax.png >
+          </dt-fn> is very weak. 
               There does not seem to be a significant relationship between weather and tweet count.</p>
           <img class=l-body src=img/Juneau_wordfreq.png >
           <p>The proportion of word frequency is nearly equal to Alaska's overall word frequency. This is interesting, considering the state and the city
@@ -146,12 +142,14 @@ MathJax.Hub.Config({
         when snowfall rates were extreme, but everything else seems consistent.</p>
           <img class=l-body src=img/Fairbanks.png >
           <img class=l-body src=img/Fairbanks_Overall_dailymax.png >
-          <img class=l-body src=img/Fairbanks_Spring_dailymax.png >
-          <img class=l-body src=img/Fairbanks_Summer_dailymax.png >
-          <img class=l-body src=img/Fairbanks_Fall_dailymax.png >
-          <img class=l-body src=img/Fairbanks_Winter_dailymax.png >
+          
           <p>Since there are so few tweets, finding any trend would be inconclusive. Overall, there seems to be a very weak relationship between 
-            season and tweet count.
+            season<dt-fn>
+                <img width=300px src=img/Fairbanks_Spring_dailymax.png >
+                <img width=300px src=img/Fairbanks_Summer_dailymax.png >
+                <img width=300px src=img/Fairbanks_Fall_dailymax.png >
+                <img width=300px src=img/Fairbanks_Winter_dailymax.png >
+            </dt-fn> and tweet count.
           </p>
           <img class=l-body src=img/Fairbanks_wordfreq.png >
           <p>Unlike Alaska and Juneau, Fairbanks' most frequently used word is warming.</p>
@@ -167,13 +165,18 @@ MathJax.Hub.Config({
               all results drawn are inconclusive.</p>
           <img class=l-body src=img/Kodiak.png >
           <img class=l-body src=img/Kodiak_Overall_dailymax.png >
-          <img class=l-body src=img/Kodiak_Spring_dailymax.png >
-          <img class=l-body src=img/Kodiak_Summer_dailymax.png >
-          <img class=l-body src=img/Kodiak_Fall_dailymax.png >
-          <img class=l-body src=img/Kodiak_Winter_dailymax.png >
+          <p>The season trends <dt-fn>
+              <img width=300px src=img/Kodiak_Spring_dailymax.png >
+              <img width=300px src=img/Kodiak_Summer_dailymax.png >
+              <img width=300px src=img/Kodiak_Fall_dailymax.png >
+              <img width=300px src=img/Kodiak_Winter_dailymax.png >
+          </dt-fn> hardly reveal anything.</p>
+          
           <p>The tweet count is too small to make any conclusion regarding seasonality</p>
           <img class=l-body src=img/Kodiak_wordfreq.png >
-          <p>Out of the two tweets created, both were about the climate</p>
+          <p>Out of the two tweets created, both were about the climate. This should be interpreted with a grain a salt.
+            The term climate is very general and has a high bayes error.
+          </p>
     <p></p>
     <h2>California</h2>
       <p>California was chosen because it is strongly Democratic and tweets about climate change the most, as seen by the earlier heatmap.</p>
@@ -204,47 +207,46 @@ MathJax.Hub.Config({
       <p>Los Angeles is strongly Democratic, with 71.8% voting for the Democratic candidate, 
           and 22.4% voting for the Republican candidate. Therefore, we would expect spikes in tweet count tend to occur during warmer weather.</p>
           <img class=l-body src=img/Los_Angeles.png >
-          <p>Some of these spikes can be explained:
-            <ul>
-              <li> December 28, 2017: Donald Trump Tweets about climate change
-              <li>September 13, 2018: California Climate Talks
-              <li>November 11, 2018: Woolsey Fires
-              <li>February 21, 2019: Snows in Hollywood
-              <li>March 15, 2019: Global climate change strikes
-              <li>September 20, 2019: Climate change strike 3 days before UN summit
-              <li>November 1, 2019: Maria Fires
-              </ul>>
-            </p>
-      <p>Every single spike in tweet count is accounted for in terms of national events. Unlike other cities thus far, 
-      Los Angeles has been impacted by several natural disasters (fires), which resulted in more spikes than other
-      cities.</p></p>
           <p>Interestingly, in July through August 2018, there seems to be some relationship between temperature and tweet count. 
               There were two extremely hot days had a spike in tweeet count. However, it is also possible that this was caused by chance.</p>
-          <p>Every single spike in tweet count is accounted for in terms of national events. Unlike other cities thus far, 
-          Los Angeles has been impacted by several natural disasters (fires), which resulted in more spikes than other
-          cities.</p>
-          <img class=l-body src=img/Los_Angeles_Overall_dailymax.png >
-        <p>Like California, Los Angeles does not have a significant seasonal variation<dt-fn>
-            <img width=300px src=img/Los_Angeles_Spring_dailymax.png >
-            <img width=300px src=img/Los_Angeles_Summer_dailymax.png >
-            <img width=300px src=img/Los_Angeles_Fall_dailymax.png >
-            <img width=300px src=img/Los_Angeles_Winter_dailymax.png >
+        
+      <p>Nearly every major spike in tweet count is accounted for<dt-fn>
+          December 28, 2017: Donald Trump Tweets about climate change <br>
+          September 13, 2018: California Climate Talks <br>
+          November 11, 2018: Woolsey Fires <br>
+          February 21, 2019: Snows in Hollywood <br>
+          March 15, 2019: Global climate change strikes <br>
+          September 20, 2019: Climate change strike 3 days before UN summit <br>
+           November 1, 2019: Maria Fires </dt-fn> 
+           in terms of national events. Unlike other cities thus far, 
+      Los Angeles has been impacted by several natural disasters (fires), which resulted in more spikes than other
+      cities.</p>
+      <img class=l-body src=img/Los_Angeles_Overall_dailymax.png >
+    <p>Like California, Los Angeles does not have a significant seasonal variation<dt-fn>
+        <img width=300px src=img/Los_Angeles_Spring_dailymax.png >
+        <img width=300px src=img/Los_Angeles_Summer_dailymax.png >
+        <img width=300px src=img/Los_Angeles_Fall_dailymax.png >
+        <img width=300px src=img/Los_Angeles_Winter_dailymax.png >
+    </dt-fn>.</p>
 
-        </dt-fn>.</p>
           <img class=l-body src=img/Los_Angeles_wordfreq.png >
     <p></p>
     <h2>Sacramento, California</h2>
       <p>Sacremento is the capital of California and shares a similar Democratic political. In the 2016 election, 
           58% of votes were for the Democratic candidate and 33.8% were for the Republican candidate.</p>
           <img class=l-body src=img/Sacramento.png >
-          <p></p>
-          <img class=l-body src=img/Sacramento_Overall_dailymax.png >
+          <p>Some of the major spikes in tweet count can be attributed to national events.<dt-fn>
+            August 27, 2018: Sacramento Valley Region Report<br>
 
-          <img class=l-body src=img/Sacramento_Spring_dailymax.png >
-          <img class=l-body src=img/Sacramento_Summer_dailymax.png >
-          <img class=l-body src=img/Sacramento_Fall_dailymax.png >
-          <img class=l-body src=img/Sacramento_Winter_dailymax.png >
-          <p>Climate change related tweets increase slightly around the fall, but I believe this is because many of the
+              February 14, 2019: Global Climate change strike<br>
+              
+              September 20, 2019: Climate change strike 3 days before UN summit</dt-fn></p>
+          <img class=l-body src=img/Sacramento_Overall_dailymax.png >
+          <p>Climate change related tweets increase slightly around the fall<dt-fn> 
+            <img width=300px src=img/Sacramento_Spring_dailymax.png >
+            <img width=300px src=img/Sacramento_Summer_dailymax.png >
+            <img width=300px src=img/Sacramento_Fall_dailymax.png >
+            <img width=300px src=img/Sacramento_Winter_dailymax.png ></dt-fn> but I believe this is because many of the
               national events coincidentally occurred during this time.</p>
           <img class=l-body src=img/Sacramento_wordfreq.png >
     <p>Once again, it seems like there is no weather correlation. Instead, national events are strongly related
@@ -253,78 +255,100 @@ MathJax.Hub.Config({
       <p>Berkeley is strongly Democratic-leaning.</p>
           <img class=l-body src=img/Berkeley.png >
           <img class=l-body src=img/Berkeley_Overall_dailymax.png >
-          <img class=l-body src=img/Berkeley_Spring_dailymax.png >
-          <img class=l-body src=img/Berkeley_Summer_dailymax.png >
-          <img class=l-body src=img/Berkeley_Fall_dailymax.png >
-          <img class=l-body src=img/Berkeley_Winter_dailymax.png >
+          <p>There seems to be slight seasonal variations<dt-fn>
+              <img width=300px src=img/Berkeley_Spring_dailymax.png >
+              <img width=300px src=img/Berkeley_Summer_dailymax.png >
+              <img width=300px src=img/Berkeley_Fall_dailymax.png >
+              <img width=300px src=img/Berkeley_Winter_dailymax.png >
+          </dt-fn> in tweet count. There is a notable increase in tweets in the summer. I imagined that the opposite would be true, since Berkeley is a college town
+        and many students leave in the summer.</p>
+          
           <img class=l-body src=img/Berkeley_wordfreq.png >
     <p></p>
     <h2>Texas</h2>
-      <p>Texas has a slight Republican leaning.</p>
-      <p>For this state, I chose cities based on population size.Unbeknownst to me at the
-          time, all of the cities are chose were liberal leaning. In hindight, I should have
-          included more Republican leaning cities</p>
+      <p>Texas has a slight Republican leaning, so it is expected there will be more tweets in colder weather.</p>
+      <p>For this state, cities were chosen based on population size. Unbeknownst to me at the
+          time, all of the cities are chose were liberal leaning. In hindight, more Republican leaning cities should have been included.</p>
           <img class=l-body src=img/TX.png >
           <img class=l-body src=img/TX_Overall_dailymax.png >
-          <img class=l-body src=img/TX_Spring_dailymax.png >
-          <img class=l-body src=img/TX_Summer_dailymax.png >
-          <img class=l-body src=img/TX_Fall_dailymax.png >
-          <img class=l-body src=img/TX_Winter_dailymax.png >
+          <p>There does not appear to be any seasonal trends. <dt-fn>
+              <img width=300px src=img/TX_Spring_dailymax.png >
+              <img width=300px src=img/TX_Summer_dailymax.png >
+              <img width=300px src=img/TX_Fall_dailymax.png >
+              <img width=300px src=img/TX_Winter_dailymax.png >
+          </dt-fn></p>
+          
           <img class=l-body src=img/TX_wordfreq.png >
-    <p></p>
+
+    <p>The word frequency of Texas is interesting, as it is different from the other observed cities and states.</p>
     <h2>Dallas, Texas</h2>
       <p>Dallas is liberal leaning with 60.2% of the people voting for the Democrat candiate in 
           the last presidential election and 34.3% voting for the Republican candidate.</p>
+          <p>There is a slight gap in weather data in late 2017. This is attributed to maintenance being done on the weather station.</p>
           <img class=l-body src=img/Dallas.png >
           <img class=l-body src=img/Dallas_Overall_dailymax.png >
-          <img class=l-body src=img/Dallas_Spring_dailymax.png >
-          <img class=l-body src=img/Dallas_Summer_dailymax.png >
-          <img class=l-body src=img/Dallas_Fall_dailymax.png >
-          <img class=l-body src=img/Dallas_Winter_dailymax.png >
+          <p>There is no obvious seasonal trend <dt-fn>
+              <img width=300px src=img/Dallas_Spring_dailymax.png >
+              <img width=300px src=img/Dallas_Summer_dailymax.png >
+              <img width=300px src=img/Dallas_Fall_dailymax.png >
+              <img width=300px src=img/Dallas_Winter_dailymax.png >
+          </dt-fn> in tweet count.</p>
           <img class=l-body src=img/Dallas_wordfreq.png >
     <p></p>
 
     <h2>Houston, Texas</h2>
       <p>Unlike Texas, Houston's leanings are more liberal with 54% voting Democrat and 41.6% voting Republican.</p>
+      <p>Similar to Dallas, some weather data is missing due to weather station maintenance.</p>
           <img class=l-body src=img/Houston.png >
           <img class=l-body src=img/Houston_Overall_dailymax.png >
-          <img class=l-body src=img/Houston_Spring_dailymax.png >
-          <img class=l-body src=img/Houston_Summer_dailymax.png >
-          <img class=l-body src=img/Houston_Fall_dailymax.png >
-          <img class=l-body src=img/Houston_Winter_dailymax.png >
+          <p>There seems to be no seasonal variation <dt-fn>
+              <img width=300px src=img/Houston_Spring_dailymax.png >
+              <img width=300px src=img/Houston_Summer_dailymax.png >
+              <img width=300px src=img/Houston_Fall_dailymax.png >
+              <img width=300px src=img/Houston_Winter_dailymax.png >
+          </dt-fn> in observed tweet count.</p>
+          
           <img class=l-body src=img/Houston_wordfreq.png >
     <p></p>
 
     <h2>San Antonio, Texas</h2>
       <p>Unlike Texas, San Antonio voted 53.7% Democrat and 40.4% voted Republican in the last presidential election.</p>
           <img class=l-body src=img/San_Antonio.png >
-          <p>There are gaps in the weather data in the beginning, due to maintenance being done on the weather station.</p>
           <img class=l-body src=img/San_Antonio_Overall_dailymax.png >
-          <img class=l-body src=img/San_Antonio_Spring_dailymax.png >
-          <img class=l-body src=img/San_Antonio_Summer_dailymax.png >
-          <img class=l-body src=img/San_Antonio_Fall_dailymax.png >
-          <img class=l-body src=img/San_Antonio_Winter_dailymax.png >
+          <p>There seems to be some seasonal<dt-fn>
+              <img width=300px  src=img/San_Antonio_Spring_dailymax.png >
+              <img width=300px  src=img/San_Antonio_Summer_dailymax.png >
+              <img width=300px  src=img/San_Antonio_Fall_dailymax.png >
+              <img width=300px  src=img/San_Antonio_Winter_dailymax.png >
+          </dt-fn> variations in tweet count.</p>
+          
           <img class=l-body src=img/San_Antonio_wordfreq.png >
-    <p></p>
+    <p>Thus far, all the major cities seem to have climate as the most used word. This is interesting, because the most used word in the state is c02.</p>
     <h2>Massachusetts</h2>
       <p>Massachusetts has a weak Democratic leaning</p>
       
           <img class=l-body src=img/MA.png >
           <img class=l-body src=img/MA_Overall_dailymax.png >
-          <img class=l-body src=img/MA_Spring_dailymax.png >
-          <img class=l-body src=img/MA_Summer_dailymax.png >
-          <img class=l-body src=img/MA_Fall_dailymax.png >
-          <img class=l-body src=img/MA_Winter_dailymax.png >
+          
+          <p>There does not seem to be any seasonal variations.<dt-fn>
+              <img width=300px src=img/MA_Spring_dailymax.png >
+          <img width=300px src=img/MA_Summer_dailymax.png >
+          <img width=300px src=img/MA_Fall_dailymax.png >
+          <img width=300px src=img/MA_Winter_dailymax.png >
+          </dt-fn> Outwardly, fall may appear to be denser, but that is simply because of scaling.</p>
+          
           <img class=l-body src=img/MA_wordfreq.png >
-    <p>In hindsight, I should have included more Republican leaning cities.</p>
     <h2>Boston, Massachusetts</h2>
       <p>Boston is strongly liberal with 78.4% voting Democrat and 16.1% voting Republican</p>
           <img class=l-body src=img/Boston.png >
           <img class=l-body src=img/Boston_Overall_dailymax.png >
-          <img class=l-body src=img/Boston_Spring_dailymax.png >
-          <img class=l-body src=img/Boston_Summer_dailymax.png >
-          <img class=l-body src=img/Boston_Fall_dailymax.png >
-          <img class=l-body src=img/Boston_Winter_dailymax.png >
+          <p>There is heardly any variation from season to season.<dt-fn>
+            <img width=300px src=img/Boston_Spring_dailymax.png >
+            <img width=300px src=img/Boston_Summer_dailymax.png >
+            <img width=300px src=img/Boston_Fall_dailymax.png >
+            <img width=300px src=img/Boston_Winter_dailymax.png >
+              
+          </dt-fn></p>
           <img class=l-body src=img/Boston_wordfreq.png >
     <p></p>
     <h2>Worcester, Massachusetts</h2>
@@ -332,20 +356,27 @@ MathJax.Hub.Config({
           and 41% voted Republican.</p>
           <img class=l-body src=img/Worcester.png >
           <img class=l-body src=img/Worcester_Overall_dailymax.png >
-          <img class=l-body src=img/Worcester_Spring_dailymax.png >
-          <img class=l-body src=img/Worcester_Summer_dailymax.png >
-          <img class=l-body src=img/Worcester_Fall_dailymax.png >
-          <img class=l-body src=img/Worcester_Winter_dailymax.png >
+          <p>Seasonal variations<dt-fn>
+              <img width=300px src=img/Worcester_Spring_dailymax.png >
+              <img width=300px src=img/Worcester_Summer_dailymax.png >
+              <img width=300px src=img/Worcester_Fall_dailymax.png >
+              <img width=300px src=img/Worcester_Winter_dailymax.png >
+              
+          </dt-fn> are very limited.</p>
           <img class=l-body src=img/Worcester_wordfreq.png >
+          
     <p></p>
     <h2>Brockton, Massachusetts</h2>
       <p>Brockton is Democratic leaning; Roughly 50% voted Democrat and 42.5% voted Republican in the last election. </p>
           <img class=l-body src=img/Brockton.png >
           <img class=l-body src=img/Brockton_Overall_dailymax.png >
-          <img class=l-body src=img/Brockton_Spring_dailymax.png >
-          <img class=l-body src=img/Brockton_Summer_dailymax.png >
-          <img class=l-body src=img/Brockton_Fall_dailymax.png >
-          <img class=l-body src=img/Brockton_Winter_dailymax.png >
+          <p>In terms of seasonal variations, the graph indicates that more tweets occur in the winter, but this is because of the single spike in tweet counts. <dt-fn>
+              <img width=300px src=img/Brockton_Spring_dailymax.png >
+              <img width=300px src=img/Brockton_Summer_dailymax.png >
+              <img width=300px src=img/Brockton_Fall_dailymax.png >
+              <img width=300px src=img/Brockton_Winter_dailymax.png >
+            </dt-fn></p>
+          
           <img width=600px class=l-body src=img/Brockton_wordfreq.png >
     <p></p>
     <h2>Weather Data</h2>
