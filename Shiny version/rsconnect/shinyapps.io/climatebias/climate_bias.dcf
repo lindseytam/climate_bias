@@ -1,0 +1,12 @@
+name: climate_bias
+title: climate_bias
+username:
+account: climatebias
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1592172
+bundleId: 2660857
+url: https://climatebias.shinyapps.io/climate_bias/
+when: 1576122752.66948
+asMultiple: FALSE
+asStatic: FALSE
