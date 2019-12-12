@@ -9,35 +9,405 @@ MathJax.Hub.Config({
 </script>
 
 <script type="text/front-matter">
-  title: "Article Title"
+  title: "climate bias" 
   description: "Description of the post"
   authors:
-  - Mike Izbicki: https://izbicki.me
+  - Lindsey Tam
   affiliations:
-  - Mathematical Sciences, Claremont McKenna College: https://cmc.edu/math
+  - Pomona College
 </script>
 
 <dt-article>
-<h1>Example Article</h1>
-<h2>Place a description of your article here</h2>
+<h1>It's cold outside. <br> Therefore, Climate Change isn't real.</h1>
+<h2>Analayzing the relationship between weather and Climate Change related tweets.</h2>
 <dt-byline></dt-byline>
-<p>This is the first paragraph of the article.</p>
-<p>We can also cite <dt-cite key="gregor2015draw"></dt-cite> external publications. <dt-fn>This will become a hoverable footnote.</dt-fn></p>
-<p>You can include inline math using the dollar sign to get \(x=2\) or the double dollar to get full equations
-$$
-\ell(\mathbb x;\mathbb w) = \log(1+\exp(\mathbb x^T \mathbb w))
-$$
-<p>This is a code block, but you should use them very sparingly.</p>
-<dt-code block language="javascript">
-  var x = 25;
-  function(x){
-    return x * x;
-  }
-</dt-code>
+<p>This project observes confirmation bias, which is the tendency to seek information 
+  that supports preexisting beliefs. Specifically, I am looking at how weather trends 
+  and political leanings impact how often climate change is mentioned in 
+  social media, specifically Twitter. Understanding confirmation bias, especially 
+  within our country and in regards to a relevant topic, sheds insight on how bias 
+  impacts interpretation of information. In addition to looking at state trends, I will also be looking
+  into cities. Comparing the relationship between city and state trends can be interesting,
+  especially in cases where the political leaning of the two differ.
+  My hypothesis expects that Democratic-leaning 
+  states and cities will tweet about climate change more during warm weather while Republican-leaning 
+  states and cities will tweet about climate change more during cool weather.</p>
 
+<h2>National Trends</h2>
+<p> National political affiliation was gauged using the result of the 2016 Presidential election. Arguably, the election results of a single year is not neccessarily the strongest indication of political prefernce.
+  However, I believe it strongly reflects public opinion on the topic of climate change. 
+  The issue of climate change has become increasingly controversial over the years. Furthermore, climate change 
+  was a major point of contention between the two major political parties. Therefore, 
+  I believe using the reults of the 2016 presidential elections reflects a general attitude towards this topic.
+  Of course, stance on climate change is not the only factor that caused a state to vote for a 
+  particular candidate or political party, but 
+  considering the topic was heavily discussed in the election, it seems appropriate to make this assumption.</p>
+
+  <p>The graph below indicates the 
+    proportion of votes for each candidate in 5 political party. There were more than 5 political parties competing 
+    in the election, but these were the five major parties. Gaps in the graph arr intentional and reflect votes 
+    that were for political parties outside of the five observed. One can clearly see that the two major parties were
+    Democrats and Republicans. Therefore, political leaning will be gauged on how strong a state leans toward the
+    Democratic or Republic party.</p>
+  <img class=l-body src=img/politic.png >
+  <p>Similar to the visualization above, the graph to the left is a map that displays political 
+    preference by state, with blues 
+    representing support for the Democratic party and the reds representing support for the 
+    Republican party. However, unlike the visualization above, this graph more clearly displays the strength of 
+    political leaning, as expressed through color opacity, with darker colors having strong support and lighter 
+    colors having weaker support. 
+    Characterizing strength of political preference was calculated using z-scores. 
+    Z-scores are values that represent how close data is to the mean, with low z scores indicating values 
+    that are close to the mean and high z scores indicating values farther away from the mean.
+    Political leaning was strong when the absolute value of the z-score was above 1.</p>
+  <img class=l-body src=img/map.png >
+  <p>An interesting realization that emerged as a result of these visualizations is understanding state 
+      preference can be drastically different than city preference. Initially, I wanted to simply look 
+      at the voting preference of each capital as an indicator of state 
+      preference because I believed that the capital would be a strong representation of the state. 
+      I quickly realized that was not the case with all states. Therefore, 
+      when looking into state trends, I tried choosing large cities (which also corresponds to more 
+      interesting twitter trends and more thorough weather information) that had varied political preferences.</p>
+      <img class=l-body src=img/heatmap.png >
+  <p>The visualization above is a heatmap comparing how frquently a climate change related key word <dt-fn>Includes: climate change, global warming, warming,
+      climate, carbon dioxide, co2, pollution, air quality, climate crisis, #climatedenial, #climateemergency,
+      climate denial, #climateaction, climate science, drought, and water level</dt-fn> is used in
+      each state. The annotated values are 'normalized tweet count by hour' <dt-fn>The value that corresponds 
+          to how many tweets containing the keyword are created, on average, for any given hour. It is calculated by dividing all climate change related tweets by the number of hours observed</dt-fn></p>
+      <p>California generates the most climate change related tweets, with the most common word used being climate. 
+      Climate is also used frquently in New York. In fact, after California, New York and Texas tweet about climate change
+      the second and third most. The term 'pollutionair quality' was a typo; therefore, it is expected that
+      all values are zero. all values in 'normalized tweet count by hour' were rounded by 2. Because of this, some of the 0 values
+      are not neccessarily 0, but are very small.</p>
+      <p>I was very surprised that there were so few results for hashtags terms <dt-fn> #climatedenial, #climateemergency </dt-fn>. When looking
+      at climate change tweets online, these terms came up alot so it is surprising that almost all states have a value
+      of 0 (or close to) for these terms.</p>
+  
+  <h2>Alaska</h2>
+  <p>Alaska has a strong Republican leaning, so I would assume that climate change related tweets occur more
+    in cold weather.</p>
+    <p>Alaska was chosen for two major reasons. Firstly, it is has a strong Republican leaning, and secondly it's climate is one
+        of the most impacted by climate change. Therefore, I expected it to have a very strong response to this issue. This did not end up 
+        being the case.</p>
+    <img class=l-body src=img/AK.png >
+    <p>
+        One of the highest tweet counts occurred in December 7, 2017 in response to extreme snowfall rates (10 inches per hour!). 
+        This supports the hypoethsis that Alaska tweets about climate change more in cooler weather.
+      </p>
+      <p>
+          For December 28, 2017, the spike in tweet count is likely attributed to President Trump's 
+          Twitter comment<dt-fn><img  width=300px src=img/trump.png ></dt-fn> regarding climate change. </p>
+          <p>
+          We will see that this tweet ignites a strong response in places beyond Alaska later on.
+        </p>
+    <img class=l-body src=img/AK_Overall_dailymax.png >
+    <img class=l-body src=img/AK_Overall_dailymin.png >
+    <p>The scatterplots above show the relationship between tweet count and temperature extremes. 
+      The visualizations are seperated by daily temoperature minimum and daily temperature maximum,
+      though there is no a significant difference between the two. Also, lowering opacity of each data point
+    enabled density to be better oberserved.</p>
+    <img class=l-body src=img/AK_Spring_dailymax.png >
+    <img class=l-body src=img/AK_Summer_dailymax.png >
+    <img class=l-body src=img/AK_Fall_dailymax.png >
+    <img class=l-body src=img/AK_Winter_dailymax.png >
+      <p>There seems to be a weak positive correlation between 
+        temperature extremes and twitter count. Furthermore, there seems to be no seasonal variations.
+        In general, climate change related tweets seem to occur slightly more during the fall season; if the hypothesis were true,
+        we would probably have expected it to occur more during the winter.
+      </p>
+      <img class=l-body src=img/AK_wordfreq.png >
+      <p>
+      The bar graph shows which key words people are using the most in their tweets. In this case, climate seems to be the most used word. </p>
+      <p>In all there is not a clear relationship between weather trends and twitter counts. If anything, twitter counts seem to be more related
+      to national events rather than the weather.</p>
+      <h2>Juneau, Alaska</h2>
+      <p>Though Alaska is strongly Republican, Juneau has a history of being Democratic leaning. 
+          In the last election, the Republican candidate recieved a majority vote of 52.8 as compared 
+          to the Democratic votes of 35.1%. If the hypothesis were true, we would expect to see more tweets in warmer weather.</p>
+          <p>Recall that the spikes in December are from the extreme snowfall and President Trump's tweet. The small spike in Septmber 20, 2019 was likely caused by a 
+            global climate chnage protest that took place 3 days before the UN Summit. Besides these 3 events, I cannot explain the other spikes in twewt count.
+          </p>
+          <img class=l-body src=img/Juneau.png >
+          <img class=l-body src=img/Juneau_Overall_dailymax.png >
+          <img class=l-body src=img/Juneau_Spring_dailymax.png >
+          <img class=l-body src=img/Juneau_Summer_dailymax.png >
+          <img class=l-body src=img/Juneau_Fall_dailymax.png >
+          <img class=l-body src=img/Juneau_Winter_dailymax.png >
+          <p>Based on scatterplot information, the relationship between tweet count and seasonality is very weak. 
+              There does not seem to be a significant relationship between weather and tweet count.</p>
+          <img class=l-body src=img/Juneau_wordfreq.png >
+          <p>The proportion of word frequency is nearly equal to Alaska's overall word frequency. This is interesting, considering the state and the city
+            have different political leanings.
+          </p>
+    <p></p>
+      <h2>Fairbanks, Alaska</h2>
+      <p>Similar to Alaska, Fairbanks is Republican leaningm with 51.4% voting for the Republican candidate and 
+          36.6% voting for the Democratic candidate. For this city, there are few climate change related tweets. The largest spike occurs
+        when snowfall rates were extreme, but everything else seems consistent.</p>
+          <img class=l-body src=img/Fairbanks.png >
+          <img class=l-body src=img/Fairbanks_Overall_dailymax.png >
+          <img class=l-body src=img/Fairbanks_Spring_dailymax.png >
+          <img class=l-body src=img/Fairbanks_Summer_dailymax.png >
+          <img class=l-body src=img/Fairbanks_Fall_dailymax.png >
+          <img class=l-body src=img/Fairbanks_Winter_dailymax.png >
+          <p>Since there are so few tweets, finding any trend would be inconclusive. Overall, there seems to be a very weak relationship between 
+            season and tweet count.
+          </p>
+          <img class=l-body src=img/Fairbanks_wordfreq.png >
+          <p>Unlike Alaska and Juneau, Fairbanks' most frequently used word is warming.</p>
+    <p></p>
+    <h2>Kodiak, Alaska</h2>
+      <p>Kodiak was chosen, because historically it has been slightly left leaning. In the
+          2016 presidential election, Kodiak actually had 41.5% support for the Democratic party and 45.4% for the 
+          Republican party. I believed this could shed interesting results regarding weather and climate change related
+          tweets. However, that proved to not be the case.</p>
+          <p>In hindsight, this was not an effective city to look it. Based on the two instance of climate chnage related
+              tweets, it is not obvious of there is any weather relationship. Interestingly, the two tweet instances both occured
+              in the winter, with no tweets in any other season. However, given the extremely limited sample size,
+              all results drawn are inconclusive.</p>
+          <img class=l-body src=img/Kodiak.png >
+          <img class=l-body src=img/Kodiak_Overall_dailymax.png >
+          <img class=l-body src=img/Kodiak_Spring_dailymax.png >
+          <img class=l-body src=img/Kodiak_Summer_dailymax.png >
+          <img class=l-body src=img/Kodiak_Fall_dailymax.png >
+          <img class=l-body src=img/Kodiak_Winter_dailymax.png >
+          <p>The tweet count is too small to make any conclusion regarding seasonality</p>
+          <img class=l-body src=img/Kodiak_wordfreq.png >
+          <p>Out of the two tweets created, both were about the climate</p>
+    <p></p>
+    <h2>California</h2>
+      <p>California was chosen because it is strongly Democratic and tweets about climate change the most, as seen by the earlier heatmap.</p>
+      
+         <img class=l-body src=img/CA.png >
+         <p>Many of the spikes in tweet count seem to be due to national events as opposed to weather trends. The December spike was probably in response 
+           to President Trump's tweet. On September 13, 2018, the California Climate Talks were occurring, which would explain the second spike. The final spike 
+           towards the end of 2019 was likely in response to the global climate change protest.
+
+         </p>
+         <p>Even though California has the highest number of climate change tweets, all spikes can be explained by national events. If the hypothesis were true, 
+           there would be more spikes during warmer weather, but that was not the case.
+         </p>
+          <img class=l-body src=img/CA_Overall_dailymax.png >
+      
+          <p>There does not seem to be a seasonal variation in tweet counts.<dt-fn>
+
+              <img width=300px src=img/CA_Spring_dailymax.png >
+              <img width=300px src=img/CA_Summer_dailymax.png >
+              <img width=300px src=img/CA_Fall_dailymax.png >
+              <img width=300px src=img/CA_Winter_dailymax.png >
+          </dt-fn>
+          </p>
+          <img class=l-body src=img/CA_wordfreq.png >
+          <p>The term climate seems to be the most frequently used</p>
+    <p></p>
+    <h2>Los Angeles, California</h2>
+      <p>Los Angeles is strongly Democratic, with 71.8% voting for the Democratic candidate, 
+          and 22.4% voting for the Republican candidate. Therefore, we would expect spikes in tweet count tend to occur during warmer weather.</p>
+          <img class=l-body src=img/Los_Angeles.png >
+          <p>Some of these spikes can be explained:
+            <ul>
+              <li> December 28, 2017: Donald Trump Tweets about climate change
+              <li>September 13, 2018: California Climate Talks
+              <li>November 11, 2018: Woolsey Fires
+              <li>February 21, 2019: Snows in Hollywood
+              <li>March 15, 2019: Global climate change strikes
+              <li>September 20, 2019: Climate change strike 3 days before UN summit
+              <li>November 1, 2019: Maria Fires
+              </ul>>
+            </p>
+      <p>Every single spike in tweet count is accounted for in terms of national events. Unlike other cities thus far, 
+      Los Angeles has been impacted by several natural disasters (fires), which resulted in more spikes than other
+      cities.</p></p>
+          <p>Interestingly, in July through August 2018, there seems to be some relationship between temperature and tweet count. 
+              There were two extremely hot days had a spike in tweeet count. However, it is also possible that this was caused by chance.</p>
+          <p>Every single spike in tweet count is accounted for in terms of national events. Unlike other cities thus far, 
+          Los Angeles has been impacted by several natural disasters (fires), which resulted in more spikes than other
+          cities.</p>
+          <img class=l-body src=img/Los_Angeles_Overall_dailymax.png >
+        <p>Like California, Los Angeles does not have a significant seasonal variation<dt-fn>
+            <img width=300px src=img/Los_Angeles_Spring_dailymax.png >
+            <img width=300px src=img/Los_Angeles_Summer_dailymax.png >
+            <img width=300px src=img/Los_Angeles_Fall_dailymax.png >
+            <img width=300px src=img/Los_Angeles_Winter_dailymax.png >
+
+        </dt-fn>.</p>
+          <img class=l-body src=img/Los_Angeles_wordfreq.png >
+    <p></p>
+    <h2>Sacramento, California</h2>
+      <p>Sacremento is the capital of California and shares a similar Democratic political. In the 2016 election, 
+          58% of votes were for the Democratic candidate and 33.8% were for the Republican candidate.</p>
+          <img class=l-body src=img/Sacramento.png >
+          <p></p>
+          <img class=l-body src=img/Sacramento_Overall_dailymax.png >
+
+          <img class=l-body src=img/Sacramento_Spring_dailymax.png >
+          <img class=l-body src=img/Sacramento_Summer_dailymax.png >
+          <img class=l-body src=img/Sacramento_Fall_dailymax.png >
+          <img class=l-body src=img/Sacramento_Winter_dailymax.png >
+          <p>Climate change related tweets increase slightly around the fall, but I believe this is because many of the
+              national events coincidentally occurred during this time.</p>
+          <img class=l-body src=img/Sacramento_wordfreq.png >
+    <p>Once again, it seems like there is no weather correlation. Instead, national events are strongly related
+        with increases in tweet count.</p>
+    <h2>Berkeley, California</h2>
+      <p>Berkeley is strongly Democratic-leaning.</p>
+          <img class=l-body src=img/Berkeley.png >
+          <img class=l-body src=img/Berkeley_Overall_dailymax.png >
+          <img class=l-body src=img/Berkeley_Spring_dailymax.png >
+          <img class=l-body src=img/Berkeley_Summer_dailymax.png >
+          <img class=l-body src=img/Berkeley_Fall_dailymax.png >
+          <img class=l-body src=img/Berkeley_Winter_dailymax.png >
+          <img class=l-body src=img/Berkeley_wordfreq.png >
+    <p></p>
+    <h2>Texas</h2>
+      <p>Texas has a slight Republican leaning.</p>
+      <p>For this state, I chose cities based on population size.Unbeknownst to me at the
+          time, all of the cities are chose were liberal leaning. In hindight, I should have
+          included more Republican leaning cities</p>
+          <img class=l-body src=img/TX.png >
+          <img class=l-body src=img/TX_Overall_dailymax.png >
+          <img class=l-body src=img/TX_Spring_dailymax.png >
+          <img class=l-body src=img/TX_Summer_dailymax.png >
+          <img class=l-body src=img/TX_Fall_dailymax.png >
+          <img class=l-body src=img/TX_Winter_dailymax.png >
+          <img class=l-body src=img/TX_wordfreq.png >
+    <p></p>
+    <h2>Dallas, Texas</h2>
+      <p>Dallas is liberal leaning with 60.2% of the people voting for the Democrat candiate in 
+          the last presidential election and 34.3% voting for the Republican candidate.</p>
+          <img class=l-body src=img/Dallas.png >
+          <img class=l-body src=img/Dallas_Overall_dailymax.png >
+          <img class=l-body src=img/Dallas_Spring_dailymax.png >
+          <img class=l-body src=img/Dallas_Summer_dailymax.png >
+          <img class=l-body src=img/Dallas_Fall_dailymax.png >
+          <img class=l-body src=img/Dallas_Winter_dailymax.png >
+          <img class=l-body src=img/Dallas_wordfreq.png >
+    <p></p>
+
+    <h2>Houston, Texas</h2>
+      <p>Unlike Texas, Houston's leanings are more liberal with 54% voting Democrat and 41.6% voting Republican.</p>
+          <img class=l-body src=img/Houston.png >
+          <img class=l-body src=img/Houston_Overall_dailymax.png >
+          <img class=l-body src=img/Houston_Spring_dailymax.png >
+          <img class=l-body src=img/Houston_Summer_dailymax.png >
+          <img class=l-body src=img/Houston_Fall_dailymax.png >
+          <img class=l-body src=img/Houston_Winter_dailymax.png >
+          <img class=l-body src=img/Houston_wordfreq.png >
+    <p></p>
+
+    <h2>San Antonio, Texas</h2>
+      <p>Unlike Texas, San Antonio voted 53.7% Democrat and 40.4% voted Republican in the last presidential election.</p>
+          <img class=l-body src=img/San_Antonio.png >
+          <p>There are gaps in the weather data in the beginning, due to maintenance being done on the weather station.</p>
+          <img class=l-body src=img/San_Antonio_Overall_dailymax.png >
+          <img class=l-body src=img/San_Antonio_Spring_dailymax.png >
+          <img class=l-body src=img/San_Antonio_Summer_dailymax.png >
+          <img class=l-body src=img/San_Antonio_Fall_dailymax.png >
+          <img class=l-body src=img/San_Antonio_Winter_dailymax.png >
+          <img class=l-body src=img/San_Antonio_wordfreq.png >
+    <p></p>
+    <h2>Massachusetts</h2>
+      <p>Massachusetts has a weak Democratic leaning</p>
+      
+          <img class=l-body src=img/MA.png >
+          <img class=l-body src=img/MA_Overall_dailymax.png >
+          <img class=l-body src=img/MA_Spring_dailymax.png >
+          <img class=l-body src=img/MA_Summer_dailymax.png >
+          <img class=l-body src=img/MA_Fall_dailymax.png >
+          <img class=l-body src=img/MA_Winter_dailymax.png >
+          <img class=l-body src=img/MA_wordfreq.png >
+    <p>In hindsight, I should have included more Republican leaning cities.</p>
+    <h2>Boston, Massachusetts</h2>
+      <p>Boston is strongly liberal with 78.4% voting Democrat and 16.1% voting Republican</p>
+          <img class=l-body src=img/Boston.png >
+          <img class=l-body src=img/Boston_Overall_dailymax.png >
+          <img class=l-body src=img/Boston_Spring_dailymax.png >
+          <img class=l-body src=img/Boston_Summer_dailymax.png >
+          <img class=l-body src=img/Boston_Fall_dailymax.png >
+          <img class=l-body src=img/Boston_Winter_dailymax.png >
+          <img class=l-body src=img/Boston_wordfreq.png >
+    <p></p>
+    <h2>Worcester, Massachusetts</h2>
+      <p>Similar to Massachusetts, Worcester is liberal leanings. In the 2016 election, 51.% voted Democrat
+          and 41% voted Republican.</p>
+          <img class=l-body src=img/Worcester.png >
+          <img class=l-body src=img/Worcester_Overall_dailymax.png >
+          <img class=l-body src=img/Worcester_Spring_dailymax.png >
+          <img class=l-body src=img/Worcester_Summer_dailymax.png >
+          <img class=l-body src=img/Worcester_Fall_dailymax.png >
+          <img class=l-body src=img/Worcester_Winter_dailymax.png >
+          <img class=l-body src=img/Worcester_wordfreq.png >
+    <p></p>
+    <h2>Brockton, Massachusetts</h2>
+      <p>Brockton is Democratic leaning; Roughly 50% voted Democrat and 42.5% voted Republican in the last election. </p>
+          <img class=l-body src=img/Brockton.png >
+          <img class=l-body src=img/Brockton_Overall_dailymax.png >
+          <img class=l-body src=img/Brockton_Spring_dailymax.png >
+          <img class=l-body src=img/Brockton_Summer_dailymax.png >
+          <img class=l-body src=img/Brockton_Fall_dailymax.png >
+          <img class=l-body src=img/Brockton_Winter_dailymax.png >
+          <img width=600px class=l-body src=img/Brockton_wordfreq.png >
+    <p></p>
+    <h2>Weather Data</h2>
+    <p><a href='https://https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00861/html'>Weather data</a> came from the National Oceanic and Atmospheric Administration (NOAA) and included temperature minimums 
+        and maximums for all state stations everyday in the last 2 years. To determine an area's weather, I chose the 
+        closest weather station. I am unsure how close the weather station is to the location itself. For instance, if the station 
+        was in Boston, I do not know if it was in the cenetr of Boston, or closer to the city's edge.</p>
+    <h2>Political Preference Data</h2>
+    <p>Data regarding the <a href='https://www.kaggle.com/benhamner/2016-us-election'>2016 Presidential Election</a> was used to gauage 
+      each state's political leanings. This dataset covers the proportion of votes for each of the 5 major political party candidates in each
+      coutnty in each state. To generate state proportion, I simply averaged every county within a state. Furthermore, the strength of
+      political leaning was also calculated using z scores.</p>
+      <h2></h2>
+      <p></p>
+      <p>Incorporating precipitation data could have been potentially interesting. The media covers incidences where people cite 
+          snow as proof that climate change is not real. Therefore, it could have been interesting to see if that trend plays out
+          in social media as well. The reason that I did not pursue this is firstly because NOAA's weather data is somewhat limited
+          in terms of precipitation
+          and secondly it would be difficult to faciliate comparisons between states, considering not all states have snow. </p>
+  <h2>Methodology</h2>
+  <h3>Working with Twitter Data</h3>
+  
+  <p>An issue that arose when working with Twitter data was managing format type. I was unable to load the files a JSONs;
+      instead, they were loaded as a single long string, or set of charactors. Therefore, I spent nearly one week parsing the 
+      two years worth (2017-2019) of Twitter data into CSV files. The intial data set included many parameters, such as the number of retweets
+      and shares, but the only variables I parsed included date of origin, city, and state. Every single day and every single hour were parsed.
+      However, some files ended up getting corrupted, which required normalizing some of the values that will be later discussed.</p>
+  <h3>Identifying Key Words</h3>
+  
+  <p>After transforming the data into an interpreatble format, the goal was to narrow it down to a set
+      of tweets that had chnages related to climate change. After looking up popular climate change related tweets
+      and hashtags,
+      I was able to come up with a list of key words, which included: climate change, global warming, warming,
+      climate, carbon dioxide, co2, pollution, air quality, climate crisis, #climatedenial, #climateemergency,
+      climate denial, #climateaction, climate science, drought, and water level. I wanted to stay away from words, such as hot or cold, 
+      which I thought were too general and could increase the estimation, optimization, and generalization error. 
+      Any tweets containing these words were included.</p>
+      <p>I am unsure of how much overlap occurred as a result of word choices. For instance, in the case of the
+          the key words 'warming' and 'global warming', I am not confident that tweets were not double counted. I struggled with making
+          the words generalizable, but also wanted to capture words that were highly specific to climate change. 
+          Including the gernealizable words possibly resulted in a higher error</p>
+
+<h3>Normalizing Value</h3>
+<p>Though all twitter data was parsed, some time periods became corrupted. I am unsure why this occurred, 
+    but I had to develop a way to account for this when interpreting the data. For example, if only 4 hours were 
+    accounted for, it would not be fair to compare it to a day when all 24 hours were used. To account for this,
+    I normalized tweets by total tweets and by hour. Tweets that were 'normalized by total count' were all climate change
+    related tweets divided by total tweets, and this was calculated for every day. Similarly, 'normalized by hour' tweets
+    were calculated by dividing all climate change related tweets by the number of hours observed. Even though 'normalized by hour'
+    is a better metric than a simple count of tweets, it is still somewhat flawed. We can make an assumption that people
+    tweet more duing waking hours. Considering 'normalized by hour' does not take into consideration which hours data was collected,
+    we can assume there is some generalization error in this value.</p>
+    <p>For all of the graphs, normalized tweet count per hour was used. For instance, a normalized tweet 
+        count per hour of .4 in California indicates that, on average, .4 tweets about climate change were generated
+        per hour in California. I did not use 'normalized by total count', because they results were harder to interpret. 
+        There are hundreds of thousands of tweets on any given day, with climate change related tweets being a small minority.
+        Therefore, nearly all 'normalized by total count' tweets had values close to zero.</p>
 </dt-article>
 
+
 <dt-appendix>
+
 </dt-appendix>
 
 <script type="text/bibliography">
