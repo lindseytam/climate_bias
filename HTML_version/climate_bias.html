@@ -89,7 +89,7 @@ MathJax.Hub.Config({
       
       <img class=l-body src=img/compare_heatmap.png >
 
-      <p>From here, one can see that California has more slightly tweets for every key word as compared to Texas (except at a tie at 'water level'). 
+      <p>From here, one can see that California has more slightly tweets for every key word as compared to Texas (except a tie at 'water level'). 
         These small differences may be attributed to population density. California's population almost 40 million is significantly larger than Texas'
         population of almost 30 million. 
       </p>
@@ -109,12 +109,14 @@ MathJax.Hub.Config({
            because it was the first one made by him. Once he started consistently tweeting about it, the public reacted less to it. In late September 13, 2018,
           the California Climate Talks were occurring, which would explain the second spike. The final spike 
            towards the end of 2019 was likely in response to the global climate change protest. In late September 2019, there were a series of major 
-          international climate change strikes in response to the meeting of United Nations Climate Summit. </p>
+          international climate change strikes in response to the meeting of United Nations Climate Summit. To be clear, I am not saying that these 
+          national events are the sole cause of these spikes, but I believe that they had a strong impact on these trends.
+         </p>
 
           <p>Perhaps disregading time can yield more intresting results. By only looking at temperature<dt-fn>
             For all scatterplot visuals, temperature was calculated using z-scores. A z-score is a measure of how far a value is from the mean, with larger score magnitudes
-             being very far from the mean (more extreme) and smaller score magnitudes being much closer to the mean. Meaning, very high z-scores are indicative of very hot days and very
-            low z-scores are extremely cold days. In this case, 
+             being very far from the mean (more extreme) and smaller score magnitudes being much closer to the mean. Meaning, a z-score of 3 is indicative of a very hot day and 
+            a z-score value of -3 is an extremely cold day. In this case, 
             the mean is the average from the two years' worth of data. For this specific visual, we are using value of daily maximum, which does not look significantly
             different if we were to use the daily minimum. 
           </dt-fn> 
@@ -130,7 +132,7 @@ MathJax.Hub.Config({
           The term climate change, on the other hand, has much lower noise. Interestingly, the term climate change is the third most used key word.
           I found it fascinating that the use of global warming was less than half of that of climate change. The two key words have the same meaning
           and conotation, so I expected their usage to be more similar. The second most used word was warming. Similar to climate, this word is not always used
-          in the context of climate change. This word was included because I believed people were highlyl likely to shorten global warming to warming, though 
+          in the context of climate change. This word was included because I believed people were highly likely to shorten global warming to warming, though 
           its hard to verify if this was actually the case. </p>
 
           <img class=l-body src=img/CA_wordfreq.png >
@@ -142,21 +144,41 @@ MathJax.Hub.Config({
       <br>
 
     <h2>Texas</h2>
-      <p>Texas has a slight Republican leaning, so it is expected there will be more tweets in colder weather.</p>
-      <p>For this state, cities were chosen based on population size. Unbeknownst to me at the
-          time, all of the cities are chose were liberal leaning. In hindight, more Republican leaning cities should have been included.</p>
+      <p>Texas has a conservative leaning, so under the hypothesis, it is expected there will be more tweets in colder weather. From the visual below, 
+        the coldest periods occured in December 2018 and 2019, with another major weather dip in Novermber 2019. In terms of quantity of tweets, Texas seemed 
+        to fluctuate at around 5 tweets per hour, which is less than that of Califonia at around 10 per hour. Again, this could potentially be the result
+        of their differentt population densities.
+      </p>
           <img class=l-body src=img/TX.png >
+        <p>There does appear to be a twitter increase during extreme weather lows
+            for both December 2018 and 2019, but not for Novermber 2019. The December 2018 spike maybe attributed to the same tweet from President Trump but
+            I could not find an event that could have caused the other Janurary spike.
+            Another major spike was in Septmeber 2019; this was likely caused by the international climate change strikes mentioned in the section above.
+           </p>
+
+           <p> The scatterplot below shows an interesting relationship. The density of tweets seems higher in warmer weathers and more scattered
+             in cooler weathers. If the hypothesis were true, I would expect to see a higher density when temperature is cooler. </p> 
+
           <img class=l-body src=img/TX_Overall_dailymax.png >
-          <p>There does not appear to be any seasonal trends. <dt-fn>
-              <img width=300px src=img/TX_Spring_dailymax.png >
-              <img width=300px src=img/TX_Summer_dailymax.png >
-              <img width=300px src=img/TX_Fall_dailymax.png >
-              <img width=300px src=img/TX_Winter_dailymax.png >
-          </dt-fn></p>
+
+          <p>It is difficult to evaluate any significant pattern from this visual alone. A possible
+            explanation for the variance in cool weather could be the fact that many of the spikes occurred in winter (cooler weather).
+          </p>
+        
           
           <img class=l-body src=img/TX_wordfreq.png >
 
-    <p>The word frequency of Texas is interesting, as it is different from the other observed cities and states.</p>
+    <p>The word frequency of Texas is shares some similarities with California.
+      For instance, climate is the most used word. In general, the two seem to share the same most used words, but in varying orders.
+      Unlike California, Texas' second most used word was CO2. 
+      CO2 is often cited as the number one contributor of climate change, which is why it was included in the list of key words. This was followed
+      by warming and climate change.
+    </p>
+    <p> Comparing the proportion of words between these two states is also interesting. In California, climate has nearly double the frequency of warming 
+      (the second most used key word) while the Texas had a less drastic difference (250 count). For both states, climate change is used twice as 
+      frequently as global warming. The word drought is used, at almost the same freuency, between the two states.
+
+    </p>
     
     <h2>Weather Data</h2>
     <p><a href='https://https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00861/html'>Weather data</a> came from the National Oceanic and Atmospheric Administration (NOAA) and included temperature minimums 
@@ -171,9 +193,7 @@ MathJax.Hub.Config({
     <h2>Political Preference Data</h2>
     <p>Data regarding the <a href='https://www.kaggle.com/benhamner/2016-us-election'>2016 Presidential Election</a> was used to gauage 
       each state's political leanings. This dataset covers the proportion of votes for each of the 5 major political party candidates in each
-      coutnty in each state. To generate state proportion, I simply averaged every county within a state. Furthermore, the strength of
-      political leaning was also calculated using z scores.</p>
-  
+      county in each state. </p>
   
 </dt-article>
 
