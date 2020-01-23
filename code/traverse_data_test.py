@@ -81,18 +81,9 @@ def traverse(project_path, hours):
 if __name__ == "__main__":
     # For DM
     dm_project_path = "/home/ltam/new_dm/"
-    dm_hours1 = [10, 16, 19]
-    dm_hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+    dm_hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 
     traverse(dm_project_path, dm_hours)
-
-    # For CS
-    cs_project_path = "/home/ltam/new_cs/"
-    #cs_hours_est = [7, 8, 9, 10, 11] # bachelor and bachelorette air on same times
-    cs_hours_est = [19, 20, 21, 22, 23]
-    #cs_hours_in_uk_time = [hour + 5 for hour in cs_hours_est]
-    cs_hours_in_uk_time = [0, 1, 2, 3, 4]
-    #traverse(cs_project_path, cs_hours_in_uk_time)
 
 
 
